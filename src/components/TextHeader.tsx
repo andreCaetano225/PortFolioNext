@@ -4,69 +4,147 @@ import { AnnimationLottie } from "./annimationLottie"
 
 import { MotionFlex, MotionItem, MotionContainer } from './annimationMotion'
 
-export const TextHeader = () => {
+export interface HomeProps {
+    buttonThemes: boolean
+}
+
+export const HomePage = (props: HomeProps) => {
     return (
         <>
-            <Flex
-                w='90vw'
-                h='90vh'
-                justifyContent={'center'}
-                alignItems='center'>
-                <Box
-                    w={'100%'}
-                    maxWidth='1280'
-                    mx='auto'
-                >
-                    <MotionFlex
-                        initial="hidden"
-                        animate="visible"
-                        variants={MotionContainer}
-                    >
-
-                        <MotionFlex
-                            w={'100%'}
-                            maxWidth='100%'
-                            justify={'space-between'}
-                            alignItems={'center'}
-                            marginLeft='20px'
-                            variants={MotionItem}
-
-                        >
+            <div>
+                {props.buttonThemes ? (
+                    <>
+                        <Flex
+                            w='100%'
+                            h='94.7vh'
+                            bg={'#FFF'}
+                            justifyContent={'center'}
+                            alignItems='center'>
                             <Box
-                                color={'#fff'}
                                 w={'100%'}
-                                maxWidth='100%'
+                                maxWidth='1280'
+                                mx='auto'
                             >
-                                <Text
-                                    fontSize={'25px'}
-                                    fontWeight='light'
-                                >Olá, eu sou o</Text>
-                                <Text
-                                    fontSize={'45px'}
-                                    fontWeight='bold'
-                                >André Sousa</Text>
-                                <Text
-                                    fontSize={'25px'}
-                                    fontWeight='light'
-                                >Desenvolvedor Front-End e UI Designer.</Text>
-                                <Button
-                                    bg={'orange.900'}
-                                    mt='20px'
-                                    height={'60px'}
-                                    w='200px'
-                                    fontSize={'20px'}
-                                    _hover={{ bg: '#C05621' }}
+                                <MotionFlex
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={MotionContainer}
                                 >
-                                    Quem sou <span style={{ marginLeft: '5px', fontSize: '30px' }}><BsBoxArrowInRight /></span>
-                                </Button>
+
+                                    <MotionFlex
+                                        w={'100%'}
+                                        maxWidth='100%'
+                                        justify={'space-between'}
+                                        alignItems={'center'}
+                                        marginLeft='20px'
+                                        variants={MotionItem}
+
+                                    >
+                                        <Box
+                                            color={'black.900'}
+                                            w={'100%'}
+                                            maxWidth='100%'
+                                        >
+                                            <Text
+                                                fontSize={'25px'}
+                                                fontWeight='light'
+                                            >Olá, eu sou o</Text>
+                                            <Text
+                                                fontSize={'45px'}
+                                                fontWeight='bold'
+                                            >André Sousa</Text>
+                                            <Text
+                                                fontSize={'25px'}
+                                                fontWeight='light'
+                                            >Desenvolvedor Front-End e UI Designer.</Text>
+
+                                            <Button
+                                                bg={'orange.900'}
+                                                mt='20px'
+                                                height={'60px'}
+                                                w='200px'
+                                                fontSize={'20px'}
+                                                _hover={{ bg: '#dd2d05' }}
+                                                color={'#fff'}
+                                            >
+                                                Quem sou  <span style={{ marginLeft: '5px', fontSize: '30px' }}><BsBoxArrowInRight /></span>
+                                            </Button>
+                                        </Box>
+                                        <Box marginLeft={100}>
+                                            <AnnimationLottie />
+                                        </Box>
+                                    </MotionFlex>
+                                </MotionFlex>
                             </Box>
-                            <Box marginLeft={100}>
-                                <AnnimationLottie />
+                        </Flex>
+                    </>
+                ) : (
+                    <>
+                        <Flex
+                            w='100%'
+                            h='94.7vh'
+                            bg={'black.900'}
+                            justifyContent={'center'}
+                            alignItems='center'>
+                            <Box
+                                w={'100%'}
+                                maxWidth='1280'
+                                mx='auto'
+                            >
+                                <MotionFlex
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={MotionContainer}
+                                >
+
+                                    <MotionFlex
+                                        w={'100%'}
+                                        maxWidth='100%'
+                                        justify={'space-between'}
+                                        alignItems={'center'}
+                                        marginLeft='20px'
+                                        variants={MotionItem}
+
+                                    >
+                                        <Box
+                                            color={'#fff'}
+                                            w={'100%'}
+                                            maxWidth='100%'
+                                        >
+                                            <Text
+                                                fontSize={'25px'}
+                                                fontWeight='light'
+                                            >Olá, eu sou o</Text>
+                                            <Text
+                                                fontSize={'45px'}
+                                                fontWeight='bold'
+                                            >André Sousa</Text>
+                                            <Text
+                                                fontSize={'25px'}
+                                                fontWeight='light'
+                                            >Desenvolvedor Front-End e UI Designer.</Text>
+
+                                            <Button
+                                                bg={'orange.900'}
+                                                mt='20px'
+                                                height={'60px'}
+                                                w='200px'
+                                                fontSize={'20px'}
+                                                _hover={{ bg: '#dd2d05' }}
+                                            >
+                                                Quem sou  <span style={{ marginLeft: '5px', fontSize: '30px' }}><BsBoxArrowInRight /></span>
+                                            </Button>
+                                        </Box>
+                                        <Box marginLeft={100}>
+                                            <AnnimationLottie />
+                                        </Box>
+                                    </MotionFlex>
+                                </MotionFlex>
                             </Box>
-                        </MotionFlex>
-                    </MotionFlex>
-                </Box>
-            </Flex>
+                        </Flex>
+                    </>
+                )}
+            </div>
         </>
     )
 }
