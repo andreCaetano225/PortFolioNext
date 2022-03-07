@@ -1,12 +1,13 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Text, Link as LinkChakra } from "@chakra-ui/react"
+import Link from "next/link";
+import { MutableRefObject } from "react";
 import { BsMoonFill } from 'react-icons/bs'
 import { FaSun } from 'react-icons/fa'
-import { useHeaderHooks } from "./header.hooks"
 
 
 export interface HeaderPropsInterface {
-    buttonThemeBlack: () => void;
     buttonThemeWhite: () => void;
+    buttonThemeBlack: () => void;
     buttonThemes: boolean;
 }
 
@@ -66,7 +67,9 @@ export const Header = (props: HeaderPropsInterface) => {
 
                                     <Text>Quem sou</Text>
                                     <Text>Serviços</Text>
-                                    <Text>Habilidades</Text>
+                                    <Link href={"/habilidades"}>
+                                        <LinkChakra>Habilidades</LinkChakra>
+                                    </Link>
                                 </Flex>
                             </Flex>
                         </Box>
@@ -102,6 +105,8 @@ export const Header = (props: HeaderPropsInterface) => {
                                                 bg={'#FFF'}
                                                 color={'black.900'}
                                                 onClick={props.buttonThemeBlack}
+
+
                                             >
                                                 <BsMoonFill />
                                             </Button>
@@ -113,6 +118,7 @@ export const Header = (props: HeaderPropsInterface) => {
                                                 bg={'black.900'}
                                                 onClick={props.buttonThemeWhite}
                                                 _hover={{ bg: 'black.900' }}
+
                                             >
                                                 <FaSun />
                                             </Button>
@@ -122,7 +128,9 @@ export const Header = (props: HeaderPropsInterface) => {
 
                                     <Text>Quem sou</Text>
                                     <Text>Serviços</Text>
-                                    <Text>Habilidades</Text>
+                                    <Link href={"/habilidades"}>
+                                        <LinkChakra>Habilidades</LinkChakra>
+                                    </Link>
                                 </Flex>
                             </Flex>
                         </Box>

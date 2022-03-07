@@ -1,18 +1,19 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react"
+import { MutableRefObject } from "react"
 import { BsBoxArrowInRight } from 'react-icons/bs'
 import { AnnimationLottie } from "./annimationLottie"
 
 import { MotionFlex, MotionItem, MotionContainer } from './annimationMotion'
 
 export interface HomeProps {
-    buttonThemes: boolean
+    colortheme: boolean;
 }
 
 export const HomePage = (props: HomeProps) => {
     return (
         <>
             <div>
-                {props.buttonThemes ? (
+                {props.colortheme ? (
                     <>
                         <Flex
                             w='100%'
