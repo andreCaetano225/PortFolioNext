@@ -5,12 +5,10 @@ import { Header } from '../components/Header/Header';
 import { useHomeHooks } from '../hooks/home.hooks';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { ButtonThemeBlack, ButtonThemeWhite, buttonTheme } = useHomeHooks()
 
   return (
     <>
       <ChakraProvider theme={theme}>
-        <Header buttonThemeBlack={ButtonThemeBlack} buttonThemeWhite={ButtonThemeWhite} buttonThemes={buttonTheme} />
         <Component {...pageProps} />
       </ChakraProvider>
     </>

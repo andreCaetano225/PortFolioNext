@@ -9,6 +9,8 @@ export interface HeaderPropsInterface {
     buttonThemeWhite: () => void;
     buttonThemeBlack: () => void;
     buttonThemes: boolean;
+    onClickHabilidade: () => void;
+    onClickHomePage: () => void;
 }
 
 export const Header = (props: HeaderPropsInterface) => {
@@ -32,8 +34,11 @@ export const Header = (props: HeaderPropsInterface) => {
 
                             >
                                 <Text
-                                    fontSize={'25px'}
-                                >{'{André Sousa}'}</Text>
+                                    onClick={props.onClickHomePage}
+                                    fontSize={'25px'}>
+                                    {'{André Sousa}'}
+                                </Text>
+
                                 <Flex
                                     w={'100%'}
                                     maxWidth='400'
@@ -67,9 +72,7 @@ export const Header = (props: HeaderPropsInterface) => {
 
                                     <Text>Quem sou</Text>
                                     <Text>Serviços</Text>
-                                    <Link href={"/habilidades"}>
-                                        <LinkChakra>Habilidades</LinkChakra>
-                                    </Link>
+                                    <Text onClick={props.onClickHabilidade}>Habilidades</Text>
                                 </Flex>
                             </Flex>
                         </Box>
@@ -90,8 +93,10 @@ export const Header = (props: HeaderPropsInterface) => {
 
                             >
                                 <Text
-                                    fontSize={'25px'}
-                                >{'{André Sousa}'}</Text>
+                                    onClick={props.onClickHomePage}
+                                    fontSize={'25px'}>
+                                    {'{André Sousa}'}
+                                </Text>
                                 <Flex
                                     w={'100%'}
                                     maxWidth='400'
@@ -128,9 +133,15 @@ export const Header = (props: HeaderPropsInterface) => {
 
                                     <Text>Quem sou</Text>
                                     <Text>Serviços</Text>
-                                    <Link href={"/habilidades"}>
-                                        <LinkChakra>Habilidades</LinkChakra>
-                                    </Link>
+                                    <Text
+                                        onClick={props.onClickHabilidade}
+                                        transition={'0.2s'}
+                                        _hover={{
+                                            cursor: 'pointer',
+                                            color: '#2D3748'
+                                        }}
+                                    >Habilidades</Text>
+
                                 </Flex>
                             </Flex>
                         </Box>

@@ -83,7 +83,7 @@ export const HomePage = (props: HomeProps) => {
                     <>
                         <Flex
                             w='100%'
-                            h='94.7vh'
+                            h='94.8vh'
                             bg={'black.900'}
                             justifyContent={'center'}
                             alignItems='center'>

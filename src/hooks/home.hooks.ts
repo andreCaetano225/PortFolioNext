@@ -6,13 +6,18 @@ export interface HomeExit {
     ButtonThemeWhite: () => void;
     ButtonThemeBlack: () => void;
     buttonThemeTest: boolean;
-    ColorTheme: void;
+    homePage: boolean;
+    habilidadePage: boolean;
+    OnclickHabilidade: () => void;
+    OnclickHomePage: () => void;
 }
 
 export const useHomeHooks = (): HomeExit => {
     
     const [buttonTheme,setButtonTheme] = useState(false);
     const [buttonThemeTest,setButtonThemeTest] = useState(false);
+    const [homePage,setHomePage] = useState(true);
+    const [habilidadePage,setHabilidadePage] = useState(false);
 
     useEffect(() => {
     }, [buttonTheme, buttonThemeTest])
@@ -30,15 +35,23 @@ export const useHomeHooks = (): HomeExit => {
 
     }, [buttonTheme, buttonThemeTest])
 
-    const ColorTheme = useMemo(() => {
-       // Metodo para criar logica relacionada ao NAVBAR para troca de thema
-    } , [buttonTheme, buttonThemeTest])
+    const OnclickHabilidade = useCallback(() => {
+        setHomePage(false);
+        setHabilidadePage(true);
+    }, [homePage,habilidadePage])
+    const OnclickHomePage = useCallback(() => {
+        setHomePage(true);
+        setHabilidadePage(false);
+    }, [homePage,habilidadePage])
 
     return{
         buttonTheme,
         ButtonThemeWhite,
         ButtonThemeBlack,
         buttonThemeTest,
-        ColorTheme
+        habilidadePage,
+        homePage,
+        OnclickHabilidade,
+        OnclickHomePage
     }
 }
