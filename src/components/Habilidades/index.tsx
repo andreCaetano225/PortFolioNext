@@ -1,3 +1,4 @@
+import { Box, Text } from "@chakra-ui/react";
 
 interface HabilidadeProps {
     colortheme: boolean;
@@ -8,10 +9,34 @@ export const Habilidade = (props: HabilidadeProps) => {
         <>
             <div>
                 {props.colortheme ? (
-                    <h1 style={{ color: 'pink' }}>Habilidades</h1>
+                    <Box
+                        bg={"#FFF"}
+                        h={"100vh"}
+                        w={"100vh"}
+                    >
+                        <Box
+                            w={"100%"}
+                            maxWidth={"220"}
+                            mx="auto"
+                            color={"black"}
+                            marginTop="100px"
+                        >
+                            <Text
+
+                            >Habilidades</Text>
+                            <hr />
+                        </Box>
+
+                    </Box>
 
                 ) : (
-                    <h1 style={{ color: 'blue' }}>Habilidades</h1>
+                    <Box
+                        bg={"black.900"}
+                        h={"100vh"}
+                    >
+                        <Text>Habilidades</Text>
+                        <hr />
+                    </Box>
                 )}
             </div>
         </>

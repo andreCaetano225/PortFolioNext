@@ -35,20 +35,23 @@ export const Header = (props: HeaderPropsInterface) => {
                             >
                                 <Text
                                     onClick={props.onClickHomePage}
-                                    fontSize={'25px'}>
+                                    fontSize={'25px'}
+                                >
                                     {'{André Sousa}'}
                                 </Text>
 
                                 <Flex
                                     w={'100%'}
-                                    maxWidth='400'
+                                    maxWidth='300'
                                     justify={'space-between'}
                                     fontSize={'17px'}
+                                    mt={"10px"}
                                 >
                                     {props.buttonThemes ? (
                                         <>
                                             <Button
                                                 marginRight={'10px'}
+                                                mt={"-8px"}
                                                 bg={'#FFF'}
                                                 color={'black.900'}
                                                 onClick={props.buttonThemeBlack}
@@ -71,7 +74,6 @@ export const Header = (props: HeaderPropsInterface) => {
 
 
                                     <Text>Quem sou</Text>
-                                    <Text>Serviços</Text>
                                     <Text onClick={props.onClickHabilidade}>Habilidades</Text>
                                 </Flex>
                             </Flex>
@@ -99,14 +101,16 @@ export const Header = (props: HeaderPropsInterface) => {
                                 </Text>
                                 <Flex
                                     w={'100%'}
-                                    maxWidth='400'
+                                    maxWidth='300'
                                     justify={'space-between'}
                                     fontSize={'17px'}
+                                    mt={"10px"}
                                 >
                                     {props.buttonThemes ? (
                                         <>
                                             <Button
                                                 marginRight={'10px'}
+                                                mt={"-8px"}
                                                 bg={'#FFF'}
                                                 color={'black.900'}
                                                 onClick={props.buttonThemeBlack}
@@ -121,6 +125,7 @@ export const Header = (props: HeaderPropsInterface) => {
                                             <Button
                                                 marginRight={'10px'}
                                                 bg={'black.900'}
+                                                mt={"-8px"}
                                                 onClick={props.buttonThemeWhite}
                                                 _hover={{ bg: 'black.900' }}
 
@@ -132,7 +137,6 @@ export const Header = (props: HeaderPropsInterface) => {
 
 
                                     <Text>Quem sou</Text>
-                                    <Text>Serviços</Text>
                                     <Text
                                         onClick={props.onClickHabilidade}
                                         transition={'0.2s'}
